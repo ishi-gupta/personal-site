@@ -209,6 +209,27 @@ class ConfettiEffect {
   }
 
   /**
+   * Create a burst of confetti at a specific position
+   * @param {Object} position - Position object with x and y coordinates
+   */
+  createBurst(position) {
+    const burstCount = 5; // Number of confetti in burst
+    const spread = 50; // How far they spread from center
+    
+    for (let i = 0; i < burstCount; i++) {
+      setTimeout(() => {
+        const offsetX = (Math.random() - 0.5) * spread;
+        const offsetY = (Math.random() - 0.5) * spread;
+        
+        this.createStar({
+          x: position.x + offsetX,
+          y: position.y + offsetY
+        });
+      }, i * 50); // Stagger the creation
+    }
+  }
+
+  /**
    * Set up event listeners for mouse, touch, and scroll interactions
    */
   setupEventListeners() {
@@ -218,37 +239,84 @@ class ConfettiEffect {
       this.last.mousePosition = this.originPosition;
     };
     
-    // Touch events (mobile)
-    window.ontouchstart = (e) => this.handleOnMove(e.touches[0]);
-    window.ontouchmove = (e) => this.handleOnMove(e.touches[0]);
-    
-    // Scroll events (more responsive on mobile)
-    let scrollTimeout;
-    window.onscroll = () => {
-      // Create confetti at random positions during scroll
-      if (Math.random() < 0.3) { // 30% chance on each scroll
-        const randomX = Math.random() * window.innerWidth;
-        const randomY = Math.random() * window.innerHeight;
-        this.createStar({ x: randomX, y: randomY });
-      }
-      
-      // Clear timeout and set new one
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        // Create a burst of confetti when scrolling stops
-        for (let i = 0; i < 3; i++) {
-          setTimeout(() => {
-            const randomX = Math.random() * window.innerWidth;
-            const randomY = Math.random() * window.innerHeight;
-            this.createStar({ x: randomX, y: randomY });
-          }, i * 100);
-        }
-      }, 150);
+    // Touch events (mobile) - create burst on tap
+    window.ontouchstart = (e) => {
+      e.preventDefault();
+      const touch = e.touches[0];
+      this.createBurst({ x: touch.clientX, y: touch.clientY });
     };
     
-    // Click/tap events
+    window.ontouchmove = (e) => this.handleOnMove(e.touches[0]);
+    
+    // Scroll events - separate logic for mobile vs desktop
+    let lastScrollY = 0;
+    let scrollTimeout;
+    
+    // Check if we're on mobile
+    const isMobile = window.innerWidth <= 768;
+    
+    if (isMobile) {
+      // MOBILE: Use window scroll (page scrolls as a whole)
+      window.onscroll = () => {
+        const currentScrollY = window.scrollY;
+        const scrollDirection = currentScrollY > lastScrollY ? 'down' : 'up';
+        
+        // Create confetti trail during scroll
+        if (Math.abs(currentScrollY - lastScrollY) > 1) {
+          const trailX = Math.random() * window.innerWidth;
+          const trailY = scrollDirection === 'down' ? 
+            Math.random() * (window.innerHeight * 0.3) + (window.innerHeight * 0.7) + currentScrollY : // Bottom 30% + scroll offset
+            Math.random() * (window.innerHeight * 0.3) + currentScrollY; // Top 30% + scroll offset
+          
+          this.createStar({ x: trailX, y: trailY });
+        }
+        
+        lastScrollY = currentScrollY;
+        
+        // Clear timeout and set new one
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          this.createBurst({ 
+            x: window.innerWidth / 2, 
+            y: window.innerHeight / 2 
+          });
+        }, 200);
+      };
+    } else {
+      // DESKTOP: Use sections container scroll (content scrolls within container)
+      const sectionsContainer = document.querySelector('.sections-container');
+      if (sectionsContainer) {
+        sectionsContainer.addEventListener('scroll', () => {
+          const currentScrollY = sectionsContainer.scrollTop;
+          const scrollDirection = currentScrollY > lastScrollY ? 'down' : 'up';
+          
+          // Create confetti trail during scroll
+          if (Math.abs(currentScrollY - lastScrollY) > 1) {
+            const trailX = Math.random() * window.innerWidth;
+            const trailY = scrollDirection === 'down' ? 
+              Math.random() * (window.innerHeight * 0.3) + (window.innerHeight * 0.7) : // Bottom 30%
+              Math.random() * (window.innerHeight * 0.3); // Top 30%
+            
+            this.createStar({ x: trailX, y: trailY });
+          }
+          
+          lastScrollY = currentScrollY;
+          
+          // Clear timeout and set new one
+          clearTimeout(scrollTimeout);
+          scrollTimeout = setTimeout(() => {
+            this.createBurst({ 
+              x: window.innerWidth / 2, 
+              y: window.innerHeight / 2 
+            });
+          }, 200);
+        });
+      }
+    }
+    
+    // Click/tap events - create burst
     document.addEventListener('click', (e) => {
-      this.createStar({ x: e.clientX, y: e.clientY });
+      this.createBurst({ x: e.clientX, y: e.clientY });
     });
   }
 
@@ -270,5 +338,11 @@ class ConfettiEffect {
     window.onscroll = null;
     document.body.onmouseleave = null;
     document.removeEventListener('click', this.handleClick);
+    
+    // Clean up sections container scroll listener (desktop only)
+    const sectionsContainer = document.querySelector('.sections-container');
+    if (sectionsContainer) {
+      sectionsContainer.removeEventListener('scroll', this.handleScroll);
+    }
   }
 }
