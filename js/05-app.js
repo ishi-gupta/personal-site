@@ -64,9 +64,6 @@ class App {
 
     // Initialize Confetti Effect
     this.components.confetti = new ConfettiEffect(this.config.confetti);
-
-    // Initialize Terminal Chat
-    this.components.terminal = new TerminalChat(this.config);
   }
 
   // ==========================================================================
