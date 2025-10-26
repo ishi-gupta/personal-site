@@ -41,7 +41,7 @@
 
 .main-content {
   position: absolute;
-  bottom: var(--spacing-lg);
+  top: calc(var(--font-size-xxl) + 4rem + var(--spacing-lg));
   left: var(--spacing-lg);
   max-width: var(--content-max-width);
   z-index: 10;
@@ -88,6 +88,10 @@
 
 .content-section {
   margin-bottom: var(--spacing-xl);
+}
+
+.content-section:first-child {
+  margin-top: 0;
 }
 
 .section-number {
@@ -148,3 +152,14 @@
 .cta-link:hover {
   color: var(--color-muted);
 }
+
+/* ==========================================================================
+   MOBILE STYLES MOVED TO DEDICATED FILES
+   ========================================================================== */
+
+/* Mobile styles are now in:
+ * - css/07-mobile-layout.css
+ * - css/08-mobile-gallery.css
+ * 
+ * This prevents conflicts between desktop and mobile styles
+ */

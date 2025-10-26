@@ -1,0 +1,50 @@
+/* ==========================================================================
+   MOBILE LAYOUT - Dedicated Mobile Styles
+   ========================================================================== */
+
+/* 
+ * This file contains ONLY mobile-specific styles
+ * No desktop styles to avoid conflicts
+ */
+
+/* ==========================================================================
+   MOBILE MAIN CONTENT
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  /* Mobile body styles */
+  body {
+    overflow: auto;
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .main-content {
+    position: absolute;
+    top: 300px;
+    left: 0;
+    width: 100%;
+    max-width: none;
+    z-index: 10;
+  }
+  
+  .sections-container {
+    max-height: none;
+    overflow-y: visible;
+    padding: var(--spacing-lg);
+    padding-right: var(--spacing-sm);
+  }
+  
+  .content-section {
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .content-section:first-child {
+    margin-top: 0;
+  }
+  
+  /* Hide chatbot on mobile for simplicity */
+  .chat-section {
+    display: none;
+  }
+}

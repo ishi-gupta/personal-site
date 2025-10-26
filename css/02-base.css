@@ -75,6 +75,8 @@ body {
   color: var(--color-primary);
 }
 
+/* Mobile body styles moved to css/07-mobile-layout.css */
+
 /* Fallback background on html element ensures the background
  * is visible even if body styles fail to load or are overridden.
  * This is a defensive programming practice - providing multiple

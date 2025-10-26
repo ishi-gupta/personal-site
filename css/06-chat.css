@@ -146,15 +146,11 @@
 }
 
 /* ==========================================================================
-   RESPONSIVE DESIGN
+   MOBILE CHAT STYLES MOVED TO DEDICATED FILE
    ========================================================================== */
 
-@media (max-width: 768px) {
-  .simple-chat {
-    font-size: var(--font-size-xs);
-  }
-  
-  .chat-input {
-    font-size: var(--font-size-xs);
-  }
-}
+/* Mobile chat styles are now in:
+ * - css/07-mobile-layout.css (chat hiding)
+ * 
+ * This prevents conflicts between desktop and mobile chat styles
+ */

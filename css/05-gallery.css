@@ -88,3 +88,13 @@
     transform: translateY(-50%);
   }
 }
+
+/* ==========================================================================
+   MOBILE GALLERY STYLES MOVED TO DEDICATED FILE
+   ========================================================================== */
+
+/* Mobile gallery styles are now in:
+ * - css/08-mobile-gallery.css
+ * 
+ * This prevents conflicts between desktop and mobile gallery styles
+ */
