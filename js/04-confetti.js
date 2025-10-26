@@ -209,14 +209,47 @@ class ConfettiEffect {
   }
 
   /**
-   * Set up event listeners for mouse and touch interactions
+   * Set up event listeners for mouse, touch, and scroll interactions
    */
   setupEventListeners() {
+    // Mouse events
     window.onmousemove = (e) => this.handleOnMove(e);
-    window.ontouchmove = (e) => this.handleOnMove(e.touches[0]);
     document.body.onmouseleave = () => {
       this.last.mousePosition = this.originPosition;
     };
+    
+    // Touch events (mobile)
+    window.ontouchstart = (e) => this.handleOnMove(e.touches[0]);
+    window.ontouchmove = (e) => this.handleOnMove(e.touches[0]);
+    
+    // Scroll events (more responsive on mobile)
+    let scrollTimeout;
+    window.onscroll = () => {
+      // Create confetti at random positions during scroll
+      if (Math.random() < 0.3) { // 30% chance on each scroll
+        const randomX = Math.random() * window.innerWidth;
+        const randomY = Math.random() * window.innerHeight;
+        this.createStar({ x: randomX, y: randomY });
+      }
+      
+      // Clear timeout and set new one
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        // Create a burst of confetti when scrolling stops
+        for (let i = 0; i < 3; i++) {
+          setTimeout(() => {
+            const randomX = Math.random() * window.innerWidth;
+            const randomY = Math.random() * window.innerHeight;
+            this.createStar({ x: randomX, y: randomY });
+          }, i * 100);
+        }
+      }, 150);
+    };
+    
+    // Click/tap events
+    document.addEventListener('click', (e) => {
+      this.createStar({ x: e.clientX, y: e.clientY });
+    });
   }
 
   /**
@@ -232,7 +265,10 @@ class ConfettiEffect {
    */
   destroy() {
     window.onmousemove = null;
+    window.ontouchstart = null;
     window.ontouchmove = null;
+    window.onscroll = null;
     document.body.onmouseleave = null;
+    document.removeEventListener('click', this.handleClick);
   }
 }

@@ -36,11 +36,38 @@
   }
   
   .content-section {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
   }
   
   .content-section:first-child {
     margin-top: 0;
+  }
+  
+  /* Improve mobile typography */
+  .section-number {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+  
+  .section-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+  }
+  
+  .section-nav {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .cta-link {
+    font-size: 0.9rem;
   }
   
   /* Hide chatbot on mobile for simplicity */
