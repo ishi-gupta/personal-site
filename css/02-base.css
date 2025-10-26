@@ -38,7 +38,7 @@
   --font-size-xxl: clamp(2rem, 8vw, 6rem);
   
   /* Layout */
-  --content-max-width: 500px;
+  --content-max-width: calc(100vw - var(--gallery-width) - 4rem);
   --gallery-width: 300px;
   --gallery-image-width: 250px;
   --gallery-image-height: 180px;
