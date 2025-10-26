@@ -1,0 +1,57 @@
+/* Photo Gallery Styles */
+.photo-gallery {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  width: 300px;
+  top: calc(clamp(2rem, 8vw, 6rem) + 4rem + 2rem);
+  overflow: hidden;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.gallery-track {
+  display: flex;
+  flex-direction: column;
+  animation: scrollGallery 20s linear infinite;
+  position: relative;
+}
+
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover {
+  opacity: 1;
+}
+
+.gallery-item img {
+  width: 250px;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.gallery-item p {
+  color: white;
+  font-family: 'IBM Plex Mono', monospace;
+  font-style: normal;
+  font-size: 0.9rem;
+  margin: 0;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  opacity: 0.8;
+}
+
+@keyframes scrollGallery {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ishita Gupta - Personal Portfolio</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/01-fonts.css">
+    <link rel="stylesheet" href="css/02-base.css">
+    <link rel="stylesheet" href="css/03-layout.css">
+    <link rel="stylesheet" href="css/04-confetti.css">
+    <link rel="stylesheet" href="css/05-gallery.css">
+    <link rel="stylesheet" href="css/06-terminal.css">
+</head>
+<body>
+    <!-- Main Header -->
+    <header class="site-header">
+        <h1 class="site-title">ISHITA GUPTA</h1>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Sections will be dynamically loaded from /sections/ folder -->
+    </main>
+
+    <!-- Photo Gallery -->
+    <aside class="photo-gallery">
+        <div class="gallery-container">
+            <div class="gallery-track">
+                <!-- Gallery items will be populated by JavaScript -->
+            </div>
+        </div>
+    </aside>
+
+    <!-- Terminal Chat Interface -->
+    <div class="terminal-chat">
+        <div class="chat-header">
+            <span class="chat-title">ishita@portfolio:~$</span>
+            <span class="chat-subtitle">Ask me anything about Ishita</span>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message system">
+                <span class="prompt">assistant@claude:</span>
+                <span class="text">Hello! I'm your personal assistant for learning about Ishita. Ask me anything about her background, interests, or work!</span>
+            </div>
+        </div>
+        <div class="chat-input-container">
+            <span class="input-prompt">user@terminal:</span>
+            <input type="text" class="chat-input" id="chatInput" placeholder="Type your question here..." autocomplete="off">
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/01-config.js"></script>
+    <script src="js/02-sections.js"></script>
+    <script src="js/03-gallery.js"></script>
+    <script src="js/04-confetti.js"></script>
+    <script src="js/06-terminal.js"></script>
+    <script src="js/05-app.js"></script>
+</body>
+</html>

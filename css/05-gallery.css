@@ -1,0 +1,90 @@
+/* ==========================================================================
+   GALLERY - Photo Gallery Styles & Animations
+   ========================================================================== */
+
+/* 
+ * This file contains:
+ * - Gallery container positioning and sizing
+ * - Gallery track and item styling
+ * - Image styling and hover effects
+ * - Scrolling animation keyframes
+ */
+
+/* ==========================================================================
+   GALLERY CONTAINER
+   ========================================================================== */
+
+.photo-gallery {
+  position: absolute;
+  bottom: var(--spacing-lg);
+  right: var(--spacing-lg);
+  width: var(--gallery-width);
+  top: calc(var(--font-size-xxl) + 4rem + var(--spacing-lg));
+  overflow: hidden;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.gallery-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* ==========================================================================
+   GALLERY TRACK & ITEMS
+   ========================================================================== */
+
+.gallery-track {
+  display: flex;
+  flex-direction: column;
+  animation: scrollGallery 20s linear infinite;
+  position: relative;
+}
+
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   GALLERY IMAGES
+   ========================================================================== */
+
+.gallery-item img {
+  width: var(--gallery-image-width);
+  height: var(--gallery-image-height);
+  object-fit: cover;
+  margin-bottom: var(--spacing-xs);
+  border-radius: 0; /* Clean, sharp edges */
+}
+
+.gallery-item p {
+  color: var(--color-primary);
+  font-family: 'IBM Plex Mono', monospace;
+  font-style: normal;
+  font-size: var(--font-size-sm);
+  margin: 0;
+  text-shadow: var(--text-shadow-subtle);
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   SCROLLING ANIMATION
+   ========================================================================== */
+
+@keyframes scrollGallery {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}

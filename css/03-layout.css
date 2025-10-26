@@ -1,0 +1,133 @@
+/* ==========================================================================
+   LAYOUT - Main Page Structure & Components
+   ========================================================================== */
+
+/* 
+ * This file contains:
+ * - Site header and title styling
+ * - Main content area layout
+ * - Section components and typography
+ * - Navigation and link styling
+ */
+
+/* ==========================================================================
+   SITE HEADER
+   ========================================================================== */
+
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.site-title {
+  padding: var(--spacing-lg) var(--spacing-sm);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: var(--font-size-xxl);
+  font-weight: bold;
+  text-align: center;
+  color: var(--color-code);
+  text-shadow: 0 0 10px var(--color-code);
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   MAIN CONTENT AREA
+   ========================================================================== */
+
+.main-content {
+  position: absolute;
+  top: calc(var(--font-size-xxl) + 4rem);
+  left: var(--spacing-lg);
+  right: var(--spacing-lg);
+  bottom: 120px; /* Space for chat interface */
+  overflow-y: auto;
+  z-index: 10;
+  pointer-events: none;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-muted) transparent;
+}
+
+.main-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.main-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  background: var(--color-muted);
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   CONTENT SECTIONS
+   ========================================================================== */
+
+.content-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.section-number {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: var(--font-size-lg);
+  font-weight: bold;
+  color: var(--color-prompt);
+  margin-bottom: var(--spacing-md);
+}
+
+.section-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.4;
+}
+
+.section-description {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: var(--font-size-sm);
+  color: var(--color-secondary);
+  line-height: 1.5;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* ==========================================================================
+   NAVIGATION & LINKS
+   ========================================================================== */
+
+.section-nav {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: var(--font-size-sm);
+  color: var(--color-muted);
+  margin-bottom: var(--spacing-sm);
+}
+
+.nav-link {
+  color: var(--color-muted);
+  text-decoration: none;
+  margin-right: var(--spacing-sm);
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+}
+
+.cta-link {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: var(--font-size-sm);
+  font-weight: bold;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.cta-link:hover {
+  color: var(--color-muted);
+}

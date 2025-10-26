@@ -1,0 +1,78 @@
+/* ==========================================================================
+   BASE - Foundation Styles & CSS Variables
+   ========================================================================== */
+
+/* 
+ * This file contains:
+ * - CSS custom properties (variables)
+ * - Global resets and base styles
+ * - Body and root element styling
+ */
+
+/* ==========================================================================
+   CSS CUSTOM PROPERTIES (Variables)
+   ========================================================================== */
+
+:root {
+  /* Terminal Color Palette */
+  --color-primary: #e6e6e6;           /* Light gray text */
+  --color-secondary: #b3b3b3;         /* Medium gray */
+  --color-muted: #808080;             /* Muted gray */
+  --color-accent: #ffffff;            /* White accents */
+  --color-code: #00ff00;              /* Green for code/highlights */
+  --color-prompt: #00d4ff;            /* Cyan for prompts */
+  --color-error: #ff6b6b;             /* Red for errors */
+  
+  /* Terminal Background */
+  --bg-primary: #0d1117;              /* Dark terminal background */
+  --bg-secondary: #161b22;            /* Slightly lighter for panels */
+  --bg-accent: #21262d;               /* Even lighter for highlights */
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  
+  /* Typography */
+  --font-size-sm: 0.9rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.1rem;
+  --font-size-xl: 1.2rem;
+  --font-size-xxl: clamp(2rem, 8vw, 6rem);
+  
+  /* Layout */
+  --content-max-width: 500px;
+  --gallery-width: 300px;
+  --gallery-image-width: 250px;
+  --gallery-image-height: 180px;
+  
+  /* Effects */
+  --glow-rgb: 255 215 0;
+  --text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  --text-shadow-subtle: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+/* ==========================================================================
+   GLOBAL RESETS
+   ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   BODY & ROOT
+   ========================================================================== */
+
+body {
+  background: var(--bg-primary);
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--color-primary);
+  line-height: 1.6;
+}

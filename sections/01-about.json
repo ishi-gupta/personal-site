@@ -1,0 +1,24 @@
+{
+  "id": "about",
+  "number": "01",
+  "title": "hey! i'm ishita.",
+  "description": "I'm a masters student at Stanford, studying CS on the systems track. I'm interested in nature, surfing, outdoor activities and building things that matter.",
+  "links": [
+    {
+      "text": "bio",
+      "href": "#bio"
+    },
+    {
+      "text": "resume →",
+      "href": "#resume"
+    },
+    {
+      "text": "links",
+      "href": "#links"
+    }
+  ],
+  "cta": {
+    "text": "about me →",
+    "href": "#about"
+  }
+}

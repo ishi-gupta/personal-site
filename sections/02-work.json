@@ -1,0 +1,20 @@
+{
+  "id": "work",
+  "number": "02",
+  "title": "sometimes i share my work here.",
+  "description": "",
+  "links": [
+    {
+      "text": "projects",
+      "href": "#projects"
+    },
+    {
+      "text": "research",
+      "href": "#research"
+    }
+  ],
+  "cta": {
+    "text": "all work →",
+    "href": "#work"
+  }
+}

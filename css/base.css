@@ -1,0 +1,16 @@
+/* Base Styles and Variables */
+:root {
+  --glow-rgb: 255 215 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(145deg, rgb(45, 45, 45), rgb(30, 30, 30));
+  height: 100vh;
+  overflow: hidden;
+}
