@@ -1,0 +1,24 @@
+{
+  "id": "languages",
+  "number": "06",
+  "title": "learning languages.",
+  "description": "I'm passionate about learning new languages and immersing myself in different cultures through media. Here I track my language learning journey and the content I'm consuming in each language.",
+  "links": [
+    {
+      "text": "current languages",
+      "href": "#current-languages"
+    },
+    {
+      "text": "media i'm watching",
+      "href": "#media"
+    },
+    {
+      "text": "learning progress",
+      "href": "#progress"
+    }
+  ],
+  "cta": {
+    "text": "see my language journey →",
+    "href": "#languages"
+  }
+}

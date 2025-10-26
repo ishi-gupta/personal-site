@@ -49,6 +49,40 @@
 }
 
 /* ==========================================================================
+   SCROLLABLE SECTIONS CONTAINER
+   ========================================================================== */
+
+.sections-container {
+  max-height: calc(100vh - 200px); /* Leave space for title and bottom margin */
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: var(--spacing-sm);
+  pointer-events: auto;
+  
+  /* Custom scrollbar styling */
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-muted) transparent;
+}
+
+.sections-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sections-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sections-container::-webkit-scrollbar-thumb {
+  background-color: var(--color-muted);
+  border-radius: 3px;
+  opacity: 0.5;
+}
+
+.sections-container::-webkit-scrollbar-thumb:hover {
+  opacity: 0.8;
+}
+
+/* ==========================================================================
    CONTENT SECTIONS
    ========================================================================== */
 

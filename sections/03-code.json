@@ -1,0 +1,24 @@
+{
+  "id": "code",
+  "number": "03",
+  "title": "code & research.",
+  "description": "I work on systems research projects that explore the intersection of technology and sustainability. My research focuses on building efficient systems for environmental monitoring and circular economy applications.",
+  "links": [
+    {
+      "text": "research",
+      "href": "#research"
+    },
+    {
+      "text": "projects",
+      "href": "#projects"
+    },
+    {
+      "text": "github",
+      "href": "https://github.com/ishi-gupta"
+    }
+  ],
+  "cta": {
+    "text": "view research →",
+    "href": "#code"
+  }
+}

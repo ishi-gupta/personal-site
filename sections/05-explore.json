@@ -1,0 +1,24 @@
+{
+  "id": "explore",
+  "number": "05",
+  "title": "exploring the world.",
+  "description": "Over the course of my life, I have lived in many beautiful countries and traveled to many more. Each place has shaped my perspective and taught me something new about the world and myself.",
+  "links": [
+    {
+      "text": "places i've lived",
+      "href": "#places-lived"
+    },
+    {
+      "text": "travel stories",
+      "href": "#travel-stories"
+    },
+    {
+      "text": "cultural experiences",
+      "href": "#cultural-experiences"
+    }
+  ],
+  "cta": {
+    "text": "read more about where I have lived, worked and thrived →",
+    "href": "#explore"
+  }
+}

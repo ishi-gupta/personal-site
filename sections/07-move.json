@@ -1,0 +1,28 @@
+{
+  "id": "move",
+  "number": "07",
+  "title": "movement & adventure.",
+  "description": "I believe in the power of physical movement to connect us with nature and ourselves. From triathlons to rock climbing, surfing to freediving, and the mindfulness of pilates and yoga.",
+  "links": [
+    {
+      "text": "triathlon",
+      "href": "#triathlon"
+    },
+    {
+      "text": "rock climbing",
+      "href": "#climbing"
+    },
+    {
+      "text": "surfing & freediving",
+      "href": "#water-sports"
+    },
+    {
+      "text": "pilates & yoga",
+      "href": "#mindful-movement"
+    }
+  ],
+  "cta": {
+    "text": "explore my adventures →",
+    "href": "#move"
+  }
+}

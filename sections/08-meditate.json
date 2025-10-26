@@ -1,0 +1,24 @@
+{
+  "id": "meditate",
+  "number": "08",
+  "title": "mindfulness & meditation.",
+  "description": "I've completed two transformative 10-day meditation camps that have deeply influenced my approach to life and work. These experiences taught me the power of mindfulness and inner stillness.",
+  "links": [
+    {
+      "text": "10-day meditation camp #1",
+      "href": "#meditation-camp-1"
+    },
+    {
+      "text": "10-day meditation camp #2",
+      "href": "#meditation-camp-2"
+    },
+    {
+      "text": "daily practice",
+      "href": "#daily-practice"
+    }
+  ],
+  "cta": {
+    "text": "read about my meditation journey →",
+    "href": "#meditate"
+  }
+}

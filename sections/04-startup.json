@@ -1,0 +1,24 @@
+{
+  "id": "startup",
+  "number": "04",
+  "title": "building things that matter.",
+  "description": "I've co-founded several ventures focused on sustainability and education. From circular economy solutions to educational technology and travel planning, I'm passionate about using technology to solve real-world problems.",
+  "links": [
+    {
+      "text": "circular economy startup",
+      "href": "#circular-economy"
+    },
+    {
+      "text": "edtech startup",
+      "href": "#edtech"
+    },
+    {
+      "text": "dora travel planner",
+      "href": "#dora"
+    }
+  ],
+  "cta": {
+    "text": "explore ventures →",
+    "href": "#startup"
+  }
+}

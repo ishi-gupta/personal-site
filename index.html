@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ishita Gupta - Personal Portfolio</title>
     
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/01-fonts.css">
-    <link rel="stylesheet" href="css/02-base.css">
-    <link rel="stylesheet" href="css/03-layout.css">
-    <link rel="stylesheet" href="css/04-confetti.css">
-    <link rel="stylesheet" href="css/05-gallery.css">
+    <!-- Stylesheets with cache-busting parameters -->
+    <!-- The ?v=2 parameter forces browsers to reload CSS files instead of using cached versions.
+         This is a standard web development practice for ensuring users see the latest styles
+         during development and after deployments. The version number should be incremented
+         whenever CSS files are updated. -->
+    <link rel="stylesheet" href="css/01-fonts.css?v=2">
+    <link rel="stylesheet" href="css/02-base.css?v=2">
+    <link rel="stylesheet" href="css/03-layout.css?v=2">
+    <link rel="stylesheet" href="css/04-confetti.css?v=2">
+    <link rel="stylesheet" href="css/05-gallery.css?v=2">
+    <link rel="stylesheet" href="css/06-chat.css?v=2">
 </head>
 <body>
     <!-- Main Header -->
@@ -20,7 +25,9 @@
 
     <!-- Main Content Area -->
     <main class="main-content">
-        <!-- Sections will be dynamically loaded from /sections/ folder -->
+        <div class="sections-container">
+            <!-- Sections will be dynamically loaded from /sections/ folder -->
+        </div>
     </main>
 
     <!-- Photo Gallery -->

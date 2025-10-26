@@ -1,0 +1,160 @@
+/* ==========================================================================
+   SIMPLE CHAT - Clean and Minimal Interface
+   ========================================================================== */
+
+/* 
+ * This file contains:
+ * - Simple, clean chat interface
+ * - Minimal styling without terminal aesthetics
+ * - Clean input and output
+ */
+
+/* ==========================================================================
+   SIMPLE CHAT SECTION
+   ========================================================================== */
+
+.chat-section {
+  /* Chat section inherits all section styling */
+}
+
+.simple-chat {
+  margin-top: var(--spacing-md);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   CHAT OUTPUT
+   ========================================================================== */
+
+.chat-output {
+  margin-bottom: var(--spacing-sm);
+}
+
+.chat-line {
+  margin-bottom: 4px;
+  color: var(--color-primary);
+}
+
+/* ==========================================================================
+   SEAMLESS INPUT
+   ========================================================================== */
+
+.terminal-input-box {
+  margin-top: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  padding: var(--spacing-sm) 0;
+  position: relative;
+}
+
+.terminal-input-box::before,
+.terminal-input-box::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.terminal-input-box::before {
+  top: 0;
+}
+
+.terminal-input-box::after {
+  bottom: 0;
+}
+
+/* ==========================================================================
+   TERMINAL PROMPT
+   ========================================================================== */
+
+.terminal-prompt {
+  color: var(--color-primary);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: var(--font-size-sm);
+  margin-right: var(--spacing-xs);
+  user-select: none;
+}
+
+/* ==========================================================================
+   TERMINAL INPUT
+   ========================================================================== */
+
+.terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+  padding: 0;
+  
+  /* Remove default input styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.terminal-input::placeholder {
+  color: var(--color-muted);
+  opacity: 0.7;
+}
+
+.terminal-input:focus::placeholder {
+  opacity: 0.5;
+}
+
+/* ==========================================================================
+   DYNAMIC CURSOR
+   ========================================================================== */
+
+.terminal-input {
+  caret-color: transparent;
+  position: relative;
+}
+
+.terminal-input-box {
+  position: relative;
+}
+
+.dynamic-cursor {
+  position: absolute;
+  width: 8px;
+  height: 16px;
+  background: var(--color-primary);
+  animation: blink 1s infinite;
+  pointer-events: none;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.terminal-input-box:focus-within .dynamic-cursor {
+  opacity: 1;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .simple-chat {
+    font-size: var(--font-size-xs);
+  }
+  
+  .chat-input {
+    font-size: var(--font-size-xs);
+  }
+}

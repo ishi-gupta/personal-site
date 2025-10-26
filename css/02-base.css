@@ -64,9 +64,21 @@
    ========================================================================== */
 
 body {
-  background: var(--bg-primary);
+  /* !important is necessary here to override any browser default styles
+   * or third-party CSS that might interfere with our custom background.
+   * This is a standard practice when you need to ensure critical styling
+   * (like the main background) is never overridden. */
+  background: var(--bg-primary) !important;
   height: 100vh;
   overflow: hidden;
   font-family: 'IBM Plex Mono', monospace;
   color: var(--color-primary);
+}
+
+/* Fallback background on html element ensures the background
+ * is visible even if body styles fail to load or are overridden.
+ * This is a defensive programming practice - providing multiple
+ * layers of protection for critical visual elements. */
+html {
+  background: var(--bg-primary) !important;
 }

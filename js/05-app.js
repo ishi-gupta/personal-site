@@ -47,9 +47,9 @@ class App {
    */
   async initializeComponents() {
     // Initialize Section Loader
-    const contentContainer = document.querySelector('.main-content');
-    if (contentContainer) {
-      this.components.sections = new SectionLoader(contentContainer);
+    const sectionsContainer = document.querySelector('.sections-container');
+    if (sectionsContainer) {
+      this.components.sections = new SectionLoader(sectionsContainer);
     }
 
     // Initialize Photo Gallery
